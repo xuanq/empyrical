@@ -1,17 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "empyrical"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
+version = "0.6.0"
+description = "empyrical is a Python library with performance and risk statistics commonly used in quantitative finance"
 authors = [
-    { name = "xuanq", email = "xuanqiraphael@gmail.com" }
+    {name = "xuanqi", email = "xuanqiraphael@gmail.com"}
 ]
-requires-python = ">=3.10"
-dependencies = []
+license = {text = "Apache License, Version 2.0"}
+readme = "README.md"
+requires-python = ">=3.10, <3.14"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: Apache Software License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "numpy>=1.9.2",
+    "pandas>=2.0",
+    "scipy>=0.15.1",
+    "six",
+    "pandas-datareader>=0.2"
+]
 
-[project.scripts]
-empyrical = "empyrical:main"
+[project.urls]
+"Homepage" = "https://github.com/xuanq/empyrical"
 
-[build-system]
-requires = ["uv_build>=0.9.14,<0.10.0"]
-build-backend = "uv_build"
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "parameterized>=0.6.1"
+]
+dev = [
+    "pytest",
+    "parameterized>=0.6.1",
+    "flake8"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

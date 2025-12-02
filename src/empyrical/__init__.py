@@ -14,9 +14,9 @@
 # limitations under the License.
 # flake8: noqa
 
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions
+from importlib.metadata import version
+
+__version__ = version("empyrical")
 
 from .stats import (
     aggregate_returns,
