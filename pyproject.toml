@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.9.14,<0.10.0"]
+build-backend = "uv_build"
 
 [project]
 name = "empyrical"
@@ -27,25 +27,17 @@ classifiers = [
     "Operating System :: OS Independent"
 ]
 dependencies = [
-    "numpy>=1.9.2",
-    "pandas>=2.0",
-    "scipy>=0.15.1",
-    "six",
-
+    "pandas>=2.3.3",
+    "scipy>=1.15.3",
 ]
 
 [project.urls]
 "Homepage" = "https://github.com/xuanq/empyrical"
 
-[project.optional-dependencies]
-test = [
-    "pytest",
-    "parameterized>=0.6.1"
-]
+[dependency-groups]
 dev = [
-    "pytest",
-    "parameterized>=0.6.1",
-    "flake8"
+    "pytest>=9.0.1",
+    "ruff>=0.14.7",
 ]
 
 [tool.setuptools.packages.find]
