@@ -31,7 +31,7 @@ dependencies = [
     "pandas>=2.0",
     "scipy>=0.15.1",
     "six",
-    "pandas-datareader>=0.2"
+
 ]
 
 [project.urls]
