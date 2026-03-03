@@ -440,7 +440,7 @@ def annual_return(returns, period=DAILY, annualization=None):
         return np.nan
 
     ann_factor = annualization_factor(period, annualization)
-    num_years = len(returns) / ann_factor
+    num_years = returns.count() / ann_factor
     # Pass array to ensure index -1 looks up successfully.
     ending_value = cum_returns_final(returns, starting_value=1)
 
